@@ -2,7 +2,7 @@ import Link from "next/link";
 import logo from "../../../public/images/logo.png";
 import Image from "next/image";
 import { TextField } from "@mui/material";
-export default function Login() {
+export default function Signup() {
   return (
     <div className="bg-blue-500 h-screen flex justify-center items-center">
       <div className="bg-white w-[30%] text-black p-5 flex flex-col justify-center items-center rounded-[50px] py-10">
