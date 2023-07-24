@@ -4,6 +4,7 @@ import { useState } from "react";
 import logo from "../../../public/images/logo.png";
 import Image from "next/image";
 import { TextField } from "@mui/material";
+import axios from "axios";
 
 const EmptyuserData = {
   uname: "",
@@ -13,10 +14,14 @@ const EmptyuserData = {
 export default function Login() {
   const [userData, setuserData] = useState(EmptyuserData);
 
-  function handleSubmit() {
-    console.log(userData);
-    //axios
+  async function handleSubmit() {
     setuserData(EmptyuserData);
+    try {
+      const response = await axios.post("/api/users/login", userData);
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
   }
   return (
     <div className="bg-blue-500 h-screen flex justify-center items-center">

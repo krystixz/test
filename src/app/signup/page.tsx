@@ -4,6 +4,7 @@ import logo from "../../../public/images/logo.png";
 import Image from "next/image";
 import { TextField } from "@mui/material";
 import { useState } from "react";
+import axios from "axios";
 
 const EmptyuserData = {
   uname: "",
@@ -13,11 +14,16 @@ const EmptyuserData = {
 export default function Signup() {
   const [userData, setUserData] = useState(EmptyuserData);
 
-  function handleClick() {
+  async function handleClick() {
     console.log(userData);
     if (userData.password === userData.confirmpass) {
       console.log("True");
-      //handle axios
+      try {
+        const response = await axios.post("/api/users/signup", userData);
+        console.log(response.data);
+      } catch (error) {
+        console.log(error);
+      }
     } else {
       console.log("False");
       //handle show error, toast
