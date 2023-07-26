@@ -5,6 +5,7 @@ import logo from "../../../public/images/logo.png";
 import Image from "next/image";
 import { TextField } from "@mui/material";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 const EmptyuserData = {
   username: "",
@@ -12,6 +13,7 @@ const EmptyuserData = {
 };
 
 export default function Login() {
+  const router = useRouter();
   const [userData, setuserData] = useState(EmptyuserData);
 
   async function handleSubmit() {
@@ -19,6 +21,7 @@ export default function Login() {
     try {
       const response = await axios.post("/api/users/login", userData);
       console.log(response.data);
+      router.push("/");
     } catch (error) {
       console.log(error);
     }
