@@ -7,7 +7,7 @@ import { useState } from "react";
 import axios from "axios";
 
 const EmptyuserData = {
-  uname: "",
+  username: "",
   password: "",
   confirmpass: "",
 };
@@ -39,12 +39,12 @@ export default function Signup() {
         <TextField
           label="Username"
           variant="standard"
-          value={userData.uname}
+          value={userData.username}
           className="my-5 w-[60%]"
           onChange={(e) => {
             setUserData({
               ...userData,
-              uname: e.target.value,
+              username: e.target.value,
             });
           }}
         />

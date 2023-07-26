@@ -7,7 +7,7 @@ import { TextField } from "@mui/material";
 import axios from "axios";
 
 const EmptyuserData = {
-  uname: "",
+  username: "",
   password: "",
 };
 
@@ -30,13 +30,13 @@ export default function Login() {
         <h1 className="text-3xl">Login</h1>
         <TextField
           label="Username"
-          value={userData.uname}
+          value={userData.username}
           variant="standard"
           className="my-5 w-[60%]"
           onChange={(e) => {
             setuserData({
               ...userData,
-              uname: e.target.value || "",
+              username: e.target.value || "",
             });
           }}
         />
