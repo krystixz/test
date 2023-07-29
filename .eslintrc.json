@@ -9,6 +9,9 @@
     "prettier"
   ],
   "rules": {
+    "react/no-unescaped-entities": "off",
+    "@next/next/no-page-custom-font": "off",
+    "no-console": "off",
     "react-hooks/exhaustive-deps": [
       "warn",
       {
@@ -54,7 +57,10 @@
     ],
     "react/react-in-jsx-scope": "off",
     "prettier/prettier": [
-      "error"
+      "error",
+  {
+    "endOfLine": "auto"
+  }
     ],
     "react/no-string-refs": "off",
     "jsx-a11y/click-events-have-key-events": "off",

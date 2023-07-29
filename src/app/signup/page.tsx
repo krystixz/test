@@ -1,11 +1,13 @@
 "use client";
+
 import Link from "next/link";
-import logo from "../../../public/images/logo.png";
 import Image from "next/image";
 import { TextField } from "@mui/material";
 import { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import logo from "../../../public/images/logo.png";
+import googleicon from "../../../public/images/googleicon.png";
 
 const EmptyuserData = {
   username: "",
@@ -29,14 +31,14 @@ export default function Signup() {
       }
     } else {
       console.log("False");
-      //handle show error, toast
+      // handle show error, toast
     }
     setUserData(EmptyuserData);
   }
 
   return (
-    <div className="bg-blue-500 h-screen flex justify-center items-center">
-      <div className="bg-white w-[30%] text-black p-5 flex flex-col justify-center items-center rounded-[50px] py-10">
+    <div className="bg-gradient-to-t from-orange-400 to-sky-400 h-screen flex justify-center items-center">
+      <div className="bg-white w-[30%] text-black p-5 flex flex-col justify-center items-center rounded-[50px]">
         <Image src={logo} alt="logo" className="w-[40%] h-auto" />
         <h1 className="text-3xl">Signup</h1>
         <TextField
@@ -76,6 +78,7 @@ export default function Signup() {
           }}
         />
         <button
+          type="button"
           className="bg-yellow-400 px-[20%] py-2 rounded-[20px] my-10"
           onClick={handleClick}
         >
@@ -90,6 +93,16 @@ export default function Signup() {
             </Link>
           </span>
         </p>
+        <hr />
+        <button
+          type="button"
+          className="bg-black inline text-white rounded-2xl my-5 py-3 px-2"
+        >
+          <div className="flex flex-row items-center">
+            <Image src={googleicon} alt="google icon" width="40" height="40" />
+            <div className="pl-2 w-full">Continue with Google</div>
+          </div>
+        </button>
       </div>
     </div>
   );

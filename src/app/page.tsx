@@ -1,4 +1,6 @@
+// eslint-disable-next-line import/extensions
 import Navbar from "../components/Navbar";
+
 export default function Home() {
   return (
     <div>

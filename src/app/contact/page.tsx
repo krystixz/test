@@ -1,10 +1,12 @@
-import { TextField, TextareaAutosize, Typography } from "@mui/material";
+import { TextField, Typography } from "@mui/material";
+// eslint-disable-next-line import/extensions
 import Navbar from "@/components/Navbar";
+
 export default function contact() {
   return (
     <div>
       <Navbar />
-      <div className="bg-blue-500 flex items-center h-auto flex-col px-[20%] py-[7%]">
+      <div className="bg-gradient-to-t from-orange-400 to-sky-400 flex items-center h-auto flex-col px-[20%] py-[7%]">
         <Typography className="text-4xl">CONTACT US</Typography>
         <Typography className="text-1xl text-center pt-[2%]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

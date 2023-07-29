@@ -1,19 +1,18 @@
 "use client";
+
 import { useRouter } from "next/navigation";
 import { Button, Typography } from "@mui/material";
 import Image from "next/image";
+// eslint-disable-next-line import/extensions
 import Navbar from "../../components/Navbar";
 import Aboutuspic from "../../../public/images/aboutus.jpg";
 
 export default function About() {
   const router = useRouter();
-  function handleClick() {
-    router.push("/login");
-  }
   return (
     <div>
       <Navbar />
-      <div className=" bg-blue-500 text-white flex flex-col h-screen">
+      <div className=" bg-gradient-to-t from-orange-400 to-sky-400 text-white flex flex-col h-screen">
         <Typography className="md:text-6xl sm:text-4xl px-[5%] pt-[10%]">
           About US
         </Typography>
@@ -41,8 +40,11 @@ export default function About() {
           </div>
         </div>
         <Button
+          type="button"
           className="bg-yellow-400 text-white w-[10%] hover:bg-yellow-600 mx-[5%] my-[1%]"
-          onClick={handleClick}
+          onClick={() => {
+            router.push("/login");
+          }}
         >
           Sign-up here
         </Button>
