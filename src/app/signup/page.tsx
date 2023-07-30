@@ -23,7 +23,7 @@ export default function Signup() {
     if (userData.password === userData.confirmpass) {
       console.log("True");
       try {
-        const response = await axios.post("/api/users/signup", userData);
+        const response = await axios.post("/api/auth/signup", userData);
         console.log(response.data);
         router.push("/login");
       } catch (error) {

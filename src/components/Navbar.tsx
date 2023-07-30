@@ -13,9 +13,6 @@ export default function Navbar() {
   const router = useRouter();
   const [dropdownOpen, setdropdownOpen] = useState(false);
   const { data: session, status } = useSession();
-  if (status === "authenticated") {
-    console.log(session);
-  }
 
   function handleClick() {
     router.push("/login");
@@ -83,7 +80,7 @@ export default function Navbar() {
               <div
                 role="button"
                 tabIndex={0}
-                onClick={() => router.push(`/posts/${session.user?.name}`)}
+                onClick={() => router.push(`/post/${session.user?.name}`)}
                 className="block py-2 px-5 text-base font-semibold text-body-color hover:bg-primary hover:bg-opacity-5 hover:text-primary"
               >
                 View Posts
@@ -92,7 +89,7 @@ export default function Navbar() {
                 role="button"
                 tabIndex={0}
                 onClick={() =>
-                  router.push(`/posts/${session.user?.name}/newpost`)
+                  router.push(`/post/${session.user?.name}/newpost`)
                 }
                 className="block py-2 px-5 text-base font-semibold text-body-color hover:bg-primary hover:bg-opacity-5 hover:text-primary"
               >

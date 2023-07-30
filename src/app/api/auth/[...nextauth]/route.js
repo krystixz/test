@@ -29,6 +29,7 @@ export const authOptions = {
             if (isPasswordCorrect) {
               const signeduser = {
                 name: user.username,
+                email: user._id.toString(),
               };
               return signeduser;
             }
