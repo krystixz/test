@@ -10,9 +10,9 @@ const postSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please provide a description"],
   },
-  user: {
+  username: {
     type: String,
-    required: [true, "Please provide a user"],
+    required: [true, "Please provide a username"],
   },
 });
 

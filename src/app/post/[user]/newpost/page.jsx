@@ -1,3 +1,5 @@
+/* eslint-disable import/no-named-as-default */
+
 "use client";
 
 import { useSession } from "next-auth/react";
@@ -9,7 +11,6 @@ function NewPost({ params }) {
   const router = useRouter();
   if (status === "authenticated") {
     if (session.user.name !== params.user.toString()) {
-      console.log("was here");
       router.replace("/");
     }
     return (

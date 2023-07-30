@@ -1,5 +1,6 @@
 "use client";
 
+import axios from "axios";
 import { TextField } from "@mui/material";
 import { useState } from "react";
 
@@ -12,12 +13,18 @@ const EmptypostData = {
 function Newpost({ user }) {
   const [postData, setpostData] = useState(EmptypostData);
 
-  function handleSubmit() {
+  async function handleSubmit() {
     setpostData({
       ...postData,
       username: user,
     });
     console.log(postData);
+    try {
+      const response = await axios.post("/api/post/newpost", postData);
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
     setpostData(EmptypostData);
   }
 
