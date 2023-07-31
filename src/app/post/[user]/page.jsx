@@ -16,13 +16,18 @@ function Userposts({ params }) {
 
   useEffect(() => {
     fetchPosts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div>
       Here we will print all {params.user} posts :{" "}
       {posts.map((post) => {
-        return <h1 className="text-white">{post.title}</h1>;
+        return (
+          <h1 className="text-white">
+            Tile : {post.title} desc : {post.description}{" "}
+          </h1>
+        );
       })}
     </div>
   );

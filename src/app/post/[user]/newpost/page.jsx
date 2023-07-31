@@ -7,12 +7,9 @@ import { useRouter } from "next/navigation";
 import Newpost from "@/components/Newpost";
 
 function NewPost({ params }) {
-  const { data: session, status } = useSession();
+  const { status } = useSession();
   const router = useRouter();
   if (status === "authenticated") {
-    if (session.user.name !== params.user.toString()) {
-      router.replace("/");
-    }
     return (
       <div>
         <Newpost user={params.user} />

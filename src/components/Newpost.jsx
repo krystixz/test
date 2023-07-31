@@ -16,7 +16,6 @@ function Newpost({ user }) {
   async function handleSubmit() {
     setpostData({
       ...postData,
-      username: user,
     });
     console.log(postData);
     try {
