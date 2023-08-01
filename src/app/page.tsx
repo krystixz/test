@@ -1,16 +1,12 @@
 // eslint-disable-next-line import/extensions
 import Navbar from "../components/Navbar";
+import Homepage from "../components/Homepage";
 
 export default function Home() {
   return (
     <div>
       <Navbar />
-      <div className="flex justify-center items-center bg-red-400 h-screen">
-        <h1>hello</h1>
-      </div>
-      <div className="flex justify-center items-center bg-red-400 h-screen">
-        <h1>hello</h1>
-      </div>
+      <Homepage />
     </div>
   );
 }

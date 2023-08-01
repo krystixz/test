@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 function Userposts({ params }) {
   const [posts, setPosts] = useState([]);
   const fetchPosts = async () => {
-    const data = await axios.post("/api/post/viewpost", {
+    const data = await axios.post("/api/users/post/viewpost", {
       username: params.user,
     });
     console.log(data.data.posts);

@@ -19,7 +19,7 @@ function Newpost({ user }) {
     });
     console.log(postData);
     try {
-      const response = await axios.post("/api/post/newpost", postData);
+      const response = await axios.post("/api/users/post/newpost", postData);
       console.log(response.data);
     } catch (error) {
       console.log(error);
