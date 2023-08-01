@@ -4,7 +4,7 @@
 
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import Newpost from "@/components/Newpost";
+import Newpost from "../../../../components/Newpost";
 
 function NewPost({ params }) {
   const { status } = useSession();
