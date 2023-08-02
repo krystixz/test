@@ -1,7 +1,7 @@
 "use client";
 
 import axios from "axios";
-import { TextField } from "@mui/material";
+import { TextField, Typography } from "@mui/material";
 import { useState } from "react";
 
 const EmptypostData = {
@@ -28,46 +28,56 @@ function Newpost({ user }) {
   }
 
   return (
-    <div className="bg-gradient-to-t from-orange-400 to-sky-400 text-black flex flex-col items-center  h-screen justify-center">
-      <h1>{user}</h1>
-      <div className="bg-white px-[10%] py-[7%] rounded-[10px]">
-        <form method="post">
-          <div>
-            <h3>Create New Post</h3>
-            <TextField
-              label="Title"
-              value={postData.title}
-              variant="standard"
-              className="my-5 w-[60%]"
-              onChange={(e) => {
-                setpostData({
-                  ...postData,
-                  title: e.target.value || "",
-                  username: user,
-                });
-              }}
-            />
-            <TextField
-              label="Description"
-              value={postData.description}
-              variant="standard"
-              className="my-5 w-[60%]"
-              onChange={(e) => {
-                setpostData({
-                  ...postData,
-                  description: e.target.value || "",
-                });
-              }}
-            />
+    <div className="bg-slate-900 text-white w-screen h-screen">
+      <div className="flex flex-col pt-[10%] gap-10 items-center">
+        <Typography sx={{ fontSize: "30px" }} className=" text-yellow-500">
+          Create New Post
+        </Typography>
+        <div className="flex flex-col gap-4 items-center w-[70%] h-[60%] bg-white rounded-[30px]">
+          <div className="flex w-[100%]">
+            <div className="flex flex-col items-center gap-10 justify-center w-[50%] pt-[3%]">
+              <TextField
+                label="Title"
+                value={postData.title}
+                variant="standard"
+                className="w-[60%]"
+                onChange={(e) => {
+                  setpostData({
+                    ...postData,
+                    title: e.target.value || "",
+                    username: user,
+                  });
+                }}
+              />
+              <TextField
+                label="Description"
+                value={postData.description}
+                variant="standard"
+                className="w-[60%]"
+                onChange={(e) => {
+                  setpostData({
+                    ...postData,
+                    description: e.target.value || "",
+                  });
+                }}
+              />
+              <button
+                type="button"
+                className="bg-yellow-500 w-[20%] py-2 rounded-[20px] mt-[10%]"
+                onClick={handleSubmit}
+              >
+                Publish
+              </button>
+            </div>
+            <div className="w-[50%] flex justify-center py-[3%]">
+              <textarea
+                className="w-[90%] resize-none bg-black rounded-[7px] text-white"
+                placeholder=" /* Enter Your Code Here */"
+                rows={15}
+              />
+            </div>
           </div>
-          <button
-            type="button"
-            className="bg-yellow-500"
-            onClick={handleSubmit}
-          >
-            Publish
-          </button>
-        </form>
+        </div>
       </div>
     </div>
   );

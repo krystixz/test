@@ -2,22 +2,15 @@
 
 "use client";
 
-import { useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
 import Newpost from "../../../../components/Newpost";
+import Navbar from "../../../../components/Navbar.tsx";
 
 function NewPost({ params }) {
-  const { status } = useSession();
-  const router = useRouter();
-  if (status === "authenticated") {
-    return (
-      <div>
-        <Newpost user={params.user} />
-      </div>
-    );
-  }
-  router.replace("/login");
-  return null;
+  return (
+    <div>
+      <Navbar />
+      <Newpost user={params.user} />
+    </div>
+  );
 }
-
 export default NewPost;
