@@ -14,6 +14,10 @@ const postSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please provide a username"],
   },
+  code: {
+    type: String,
+    required: [true, "Please provide your code"],
+  },
 });
 
 const Post = mongoose.models.Post || mongoose.model("Post", postSchema);

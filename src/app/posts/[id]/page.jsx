@@ -4,13 +4,13 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 function Singlepost({ params }) {
-  const [posts, setPosts] = useState([]);
+  const [post, setPost] = useState([]);
   const fetchPosts = async () => {
     console.log(params.id);
     const data = await axios.post("/api/posts/singlepost", { id: params.id });
     console.log(data.data.post);
 
-    setPosts(data.data.post);
+    setPost(data.data.post);
   };
 
   useEffect(() => {
@@ -20,9 +20,9 @@ function Singlepost({ params }) {
 
   return (
     <div>
-      Here we will print all Homepage posts :{" "}
+      Here we will print all Homepage posts :
       <h1 className="text-white">
-        Tile : {posts.title} desc : {posts.description}{" "}
+        Tile : {post.title} desc : {post.description} <pre>{post.code}</pre>
       </h1>
     </div>
   );

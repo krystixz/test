@@ -40,7 +40,7 @@ export default function Login() {
     }
   }
   return (
-    <div className="bg-gradient-to-t from-orange-400 to-sky-400 h-screen flex justify-center items-center">
+    <div className="bg-slate-900 h-screen flex justify-center items-center">
       <div className="bg-white w-[30%] text-black p-5 flex flex-col justify-center items-center rounded-[50px]">
         <Image src={logo} alt="logo" className="w-[40%] h-auto" />
         <h1 className="text-3xl">Login</h1>

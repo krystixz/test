@@ -8,7 +8,9 @@ export async function POST(request: NextRequest) {
   try {
     const data = await request.json();
     console.log(data);
-    const allposts = await Post.find(data);
+    const allposts = await Post.find(data, { code: 0, __v: 0 });
+    console.log(allposts);
+
     return NextResponse.json({
       message: "post saved successful",
       success: true,

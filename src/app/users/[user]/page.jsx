@@ -2,6 +2,9 @@
 
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Postcard from "@/components/Postcard";
+import Navbar from "@/components/Navbar";
+import { Typography } from "@mui/material";
 
 function Userposts({ params }) {
   const [posts, setPosts] = useState([]);
@@ -20,15 +23,27 @@ function Userposts({ params }) {
   }, []);
 
   return (
-    <div>
-      Here we will print all {params.user} posts :{" "}
-      {posts.map((post) => {
-        return (
-          <h1 className="text-white">
-            Tile : {post.title} desc : {post.description}{" "}
-          </h1>
-        );
-      })}
+    <div className="bg-slate-900 h-screen">
+      <Navbar />
+      <div className="pt-[10%] p-5">
+        <div>
+          <Typography className="text-yellow-500 text-3xl ">
+            Your Recent Posts
+          </Typography>
+          <hr className="mt-3" />
+        </div>
+        <div>
+          {posts.map((post) => {
+            return (
+              <Postcard
+                title={post.title}
+                description={post.description}
+                postlink={`/posts/${post._id}`}
+              />
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }

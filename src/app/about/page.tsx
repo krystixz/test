@@ -12,23 +12,26 @@ export default function About() {
   return (
     <div>
       <Navbar />
-      <div className=" bg-gradient-to-t from-orange-400 to-sky-400 text-white flex flex-col h-screen">
-        <Typography className="md:text-6xl sm:text-4xl px-[5%] pt-[10%]">
+      <div className=" bg-slate-900 text-white flex flex-col h-screen">
+        <Typography className="md:text-6xl sm:text-4xl px-[5%] pt-[10%] text-yellow-500">
           About US
         </Typography>
         <div className=" grid grid-cols-2 px-[5%]">
           <div className="flex flex-col justify-center items-center">
-            <Typography className="md:text-2xl sm:text-1xl">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+            <Typography className=" text-[18px]">
+              Welcome to Codehub, your go-to platform for staying motivated and
+              sharpening your competitive programming skills! We understand the
+              challenges students face while preparing for competitive
+              programming interviews, and that's why we have created this
+              dedicated space for you to share your daily accomplishments and
+              progress.
             </Typography>
-            <Typography className="md:text-2xl sm:text-1xl pt-5">
-              Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-              cupidatat non proident, sunt in culpa qui officia deserunt mollit
-              anim id est laborum.
+            <Typography className="text-[18px] pt-5">
+              Join us at Codehub and embark on an exciting journey of learning,
+              growth, and motivation. Let's come together, push our boundaries,
+              and unlock our true potential in the world of competitive
+              programming! Remember, every small step counts, and with Codehub,
+              you're never alone in your pursuit of excellence. Happy coding!
             </Typography>
           </div>
           <div className="flex justify-center">
@@ -41,7 +44,7 @@ export default function About() {
         </div>
         <Button
           type="button"
-          className="bg-yellow-400 text-white w-[10%] hover:bg-yellow-600 mx-[5%] my-[1%]"
+          className="bg-yellow-500 text-white w-[10%] hover:bg-yellow-600 mx-[5%] my-[1%]"
           onClick={() => {
             router.push("/login");
           }}

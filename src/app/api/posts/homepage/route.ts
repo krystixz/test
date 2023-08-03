@@ -6,7 +6,7 @@ import Post from "@/models/postSchema";
 export async function GET() {
   await connect();
   try {
-    const allposts = await Post.find();
+    const allposts = await Post.find({}, { code: 0, __v: 0 });
     console.log(allposts);
     return NextResponse.json({
       message: "post saved successful",

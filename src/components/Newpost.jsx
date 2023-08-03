@@ -8,6 +8,7 @@ const EmptypostData = {
   username: "",
   title: "",
   description: "",
+  code: "",
 };
 
 function Newpost({ user }) {
@@ -72,8 +73,15 @@ function Newpost({ user }) {
             <div className="w-[50%] flex justify-center py-[3%]">
               <textarea
                 className="w-[90%] resize-none bg-black rounded-[7px] text-white"
+                value={postData.code}
                 placeholder=" /* Enter Your Code Here */"
                 rows={15}
+                onChange={(e) => {
+                  setpostData({
+                    ...postData,
+                    code: e.target.value || "",
+                  });
+                }}
               />
             </div>
           </div>

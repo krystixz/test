@@ -6,13 +6,12 @@ export default function contact() {
   return (
     <div>
       <Navbar />
-      <div className="bg-gradient-to-t from-orange-400 to-sky-400 flex items-center h-auto flex-col px-[20%] py-[7%]">
-        <Typography className="text-4xl">CONTACT US</Typography>
+      <div className="bg-slate-900 flex items-center h-auto flex-col px-[20%] py-[7%]">
+        <Typography className="text-4xl text-yellow-500">CONTACT US</Typography>
         <Typography className="text-1xl text-center pt-[2%]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+          Have questions or suggestions? Get in touch with us at Codehub, and
+          we'll be thrilled to hear from you! Your feedback fuels our mission of
+          keeping students motivated in competitive programming.
         </Typography>
         <div className="bg-white rounded-[20px] flex flex-col justify-center items-center text-black w-[45%] mt-10 py-[5%]">
           <Typography className="text-3xl text-yellow-400">

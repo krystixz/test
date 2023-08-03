@@ -2,7 +2,9 @@
 
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Link from "next/link";
+// import Link from "next/link";
+import { Typography } from "@mui/material";
+import Postcard from "./Postcard";
 
 function Homepage() {
   const [posts, setPosts] = useState([]);
@@ -19,18 +21,26 @@ function Homepage() {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen">
-      Here we will print all Homepage posts :{" "}
+    <div className="h-screen bg-slate-900 pt-[10%] p-5">
+      <div className="pb-4">
+        <Typography className="text-yellow-500 text-3xl">
+          Latest Posts
+        </Typography>
+        <hr className="mt-3" />
+      </div>
       <div>
         {posts.map((post) => {
           return (
-            <Link href={`/posts/${post._id}`} className="text-white">
-              Tile : {post.title} desc : {post.description}{" "}
-            </Link>
+            <Postcard
+              title={post.title}
+              description={post.description}
+              postlink={`/posts/${post._id}`}
+            />
           );
         })}
       </div>
     </div>
   );
 }
+
 export default Homepage;
