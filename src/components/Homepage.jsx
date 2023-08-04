@@ -21,7 +21,7 @@ function Homepage() {
   }, []);
 
   return (
-    <div className="h-screen bg-slate-900 pt-[10%] p-5">
+    <div className="bg-slate-900 pt-[10%] p-5">
       <div className="pb-4">
         <Typography className="text-yellow-500 text-3xl">
           Latest Posts

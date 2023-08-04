@@ -2,9 +2,9 @@
 
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Postcard from "@/components/Postcard";
-import Navbar from "@/components/Navbar";
 import { Typography } from "@mui/material";
+import Postcard from "@/components/Postcard";
+import Navbar from "@/components/Navbar.tsx";
 
 function Userposts({ params }) {
   const [posts, setPosts] = useState([]);
