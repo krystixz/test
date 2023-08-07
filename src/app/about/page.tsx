@@ -12,11 +12,11 @@ export default function About() {
   return (
     <div>
       <Navbar />
-      <div className=" bg-slate-900 text-white flex flex-col h-screen">
-        <Typography className="md:text-6xl sm:text-4xl px-[5%] pt-[10%] text-yellow-500">
+      <div className=" bg-slate-900 text-white flex flex-col h-screen px-[5%]">
+        <Typography className="md:text-6xl sm:text-4xl  pt-[10%] text-yellow-500">
           About US
         </Typography>
-        <div className=" grid grid-cols-2 px-[5%]">
+        <div className=" grid grid-cols-2">
           <div className="flex flex-col justify-center items-center">
             <Typography className=" text-[18px]">
               Welcome to Codehub, your go-to platform for staying motivated and
@@ -42,15 +42,22 @@ export default function About() {
             />
           </div>
         </div>
-        <Button
-          type="button"
-          className="bg-yellow-500 text-white w-[10%] hover:bg-yellow-600 mx-[5%] my-[1%]"
-          onClick={() => {
-            router.push("/login");
-          }}
-        >
-          Sign-up here
-        </Button>
+        <div className="w-[10%]">
+          <Button
+            fullWidth
+            type="button"
+            sx={{
+              bgcolor: "#FACC15",
+              color: "white",
+              ":hover": { bgcolor: "#CA8A04" },
+            }}
+            onClick={() => {
+              router.push("/login");
+            }}
+          >
+            Sign-up here
+          </Button>
+        </div>
       </div>
     </div>
   );

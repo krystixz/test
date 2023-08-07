@@ -11,7 +11,13 @@ function Postcard({ title, description, postlink }) {
         </Typography>
         <Button
           href={postlink}
-          className="bg-yellow-500 text-white hover:bg-yellow-600"
+          color="secondary"
+          variant="contained"
+          sx={{
+            bgcolor: "#FACC15",
+            color: "white",
+            ":hover": { bgcolor: "#CA8A04" },
+          }}
         >
           View Post
         </Button>
